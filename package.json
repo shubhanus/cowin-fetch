@@ -4,7 +4,7 @@
   "description": "fetch vaccine status",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "yarn start"
   },
   "author": "shubhanu (shubhanus@live.com)",
   "license": "MIT",
