@@ -84,7 +84,7 @@ const recursiveGetFreeSlot = (pincode, age) => {
         console.log("\n\nbye bye");
       } catch (error) {
         console.log(
-          `Sleeping for ${sleepTime / 1000 / 60} mins before next attempt.`
+          `Oops No availability. Sleeping for ${sleepTime / 1000 / 60} mins before next attempt.`
         );
       }
     }, sleepTime);
