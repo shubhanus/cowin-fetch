@@ -8,6 +8,7 @@ const rl = readline.createInterface({
 
 const defaultPincode = 313001;
 const defaultAge = 18;
+const centerIdsToCheck = [552582, 546736];
 
 rl.question(`Enter Pincode:(${defaultPincode})`, (pincode) => {
   rl.question(`Enter age:(${defaultAge})`, (age) => {
@@ -32,14 +33,16 @@ const req = {
 
 const getAvailableSlots = (centers, age) => {
   const availableCenters = centers.filter((center) => {
-    if (center.fee_type === "Free") {
+    if (
+      center.fee_type === "Free" &&
+      centerIdsToCheck.reduce(center.center_id)
+    ) {
       return center.sessions.find(
         (session) =>
           session.available_capacity > 0 && session.min_age_limit === age
       );
     }
   });
-
   return availableCenters;
 };
 
@@ -62,7 +65,9 @@ const getFreeSlot = (pincode, age, intervel) => {
 const sleepTime = 500 * 60;
 // const sleepTime = 1000;
 const getFreeSlotWithFeedback = (pincode, age) => {
-  console.log(`\n\nFinding availablity for ${pincode} and age ${age}.`);
+  console.log(
+    `\n\nFinding availablity for ${pincode}, age ${age} and centers ${centerIdsToCheck.join()} .`
+  );
   return new Promise((resolve, reject) => {
     getFreeSlot(pincode, age).then((availableCenters) => {
       if (availableCenters && availableCenters.length) {
