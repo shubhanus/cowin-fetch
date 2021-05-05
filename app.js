@@ -35,7 +35,7 @@ const getAvailableSlots = (centers, age) => {
   const availableCenters = centers.filter((center) => {
     if (
       center.fee_type === "Free" &&
-      centerIdsToCheck.reduce(center.center_id)
+      centerIdsToCheck.includes(center.center_id)
     ) {
       return center.sessions.find(
         (session) =>
