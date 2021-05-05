@@ -1,0 +1,14 @@
+{
+  "name": "cowin-fetch",
+  "version": "1.0.0",
+  "description": "fetch vaccine status",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shubhanu (shubhanus@live.com)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
