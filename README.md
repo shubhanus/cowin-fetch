@@ -1,6 +1,6 @@
 # cowin-fetch (WIP)
 
-Clone repo
+Clone repo `git clone https://github.com/shubhanus/cowin-fetch.git`
 
 ### setup
 Install dependencies
